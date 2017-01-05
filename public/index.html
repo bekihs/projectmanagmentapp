@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel = "stylesheet" href="style.css" type="text/css" />
+    <title>Project Managment App </title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project Managment App</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Tasks</a></li>
+            <!-- <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+      <div class="container">
+
+      <div class="starter-template">
+        <h1>Project Managment App</h1>
+        <p class="lead">Use this app as a way to quickly manage any new project.<br> Start by defining the task and its owner below</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="usr">Task Name</label>
+            <input type="text" class="form-control" id="usr" data-bind="value: taskName">
+          </div>
+        <div class="form-group">
+          <label for="pwd">Task Owner</label>
+          <input type="password" class="form-control" id="pwd" data-bind="value: taskOwner">
+        </div>
+        <button type="button" class="btn btn-primary" data-bind="click: addTask">Send Task</button>
+
+        </div>
+
+        <div class="col-md-4">
+          <label for="sel1">Task Status</label>
+
+          <select class="form-control" id="sel1" data-bind="value: taskStatus">
+            <option>1</option>
+            <option>2</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label for="sel1">Color</label>
+
+          <select class="form-control" id="sel1" data-bind="value: taskColor">
+            <option>1</option>
+            <option>2</option>
+          </select>
+
+
+        </div>
+
+      </div>
+
+    </div><!-- /.container -->
+
+
+  </body>
+</html>
