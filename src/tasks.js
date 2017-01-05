@@ -6,7 +6,8 @@ function Task(data){
 }
 //Holds Data
 function TaskViewModel(){
-      this.tasks = ko.observable([]);
+  var self = this;
+      this.tasks = ko.observableArray([]);
       this.taskName = ko.observable();
       this.taskOwner = ko.observable();
       this.taskStatus = ko.observable();
@@ -16,19 +17,19 @@ function TaskViewModel(){
         this.addTask = function(){
           var newTask = new Task(
             {
-              taskName: this.taskName(),
-              taskOwner: this.taskOwner(),
-              taskStatus: this.taskStatus(),
-              taskColor: this.taskColor()
+              taskName: self.taskName(),
+              taskOwner: self.taskOwner(),
+              taskStatus: self.taskStatus(),
+              taskColor: self.taskColor()
             });
 
-            this.tasks.push(newTask);
+            self.tasks.push(newTask);
 
-            this.taskName("");
-            this.taskOwner("");
-            this.taskStatus(1);
-            this.taskColor(1);
+            self.taskName("");
+            self.taskOwner("");
+            self.taskStatus(1);
+            self.taskColor(1);
       };
     };
 
-ko.applyBindings(new TaskListViewModel());
+ko.applyBindings(new TaskViewModel());
